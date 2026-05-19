@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { formatDate } from '@shared/utils';
+import { formatDate } from '@/lib/utils';
 import { Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface DatePickerProps {
