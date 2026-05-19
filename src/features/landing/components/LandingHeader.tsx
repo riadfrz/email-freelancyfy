@@ -38,12 +38,19 @@ const LandingHeader = () => {
 
                 <nav className="hidden items-center justify-center gap-8 md:flex">
                     {[
-                        { label: 'Features', href: '#' },
-                        { label: 'How it works', href: '#' },
+                        { label: 'Features', href: '#features' },
+                        { label: 'How it works', href: '#how-it-works' },
                     ].map((item) => (
                         <a
                             key={item.label}
                             href={item.href}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const target = document.querySelector(item.href);
+                                if (target) {
+                                    target.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
                             className="text-[13px] font-medium text-landing-secondary transition-colors hover:text-landing-primary"
                         >
                             {item.label}

@@ -13,8 +13,12 @@ const Landing = () => {
             <LandingHeader />
             <main>
                 <HeroSection />
-                <AISection />
-                <GlowingFeaturesSection />
+                <div id="how-it-works">
+                    <AISection />
+                </div>
+                <div id="features">
+                    <GlowingFeaturesSection />
+                </div>
                 <BentoGridSection />
                 <div id="resources">
                     <FoundationsSection />
