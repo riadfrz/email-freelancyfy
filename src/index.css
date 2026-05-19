@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: #000000;
+    /* Subtle purple radial glow centered above the fold */
+    background-image: radial-gradient(
+      ellipse at 50% 0%,
+      rgba(94, 106, 210, 0.15) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+    background-attachment: fixed;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+  }
+}
