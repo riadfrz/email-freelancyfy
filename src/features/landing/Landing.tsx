@@ -11,7 +11,7 @@ const Landing = () => {
     return (
         <div className="min-h-screen bg-landing-background font-sans text-landing-primary selection:bg-landing-primary/10">
             <LandingHeader />
-            <main>
+            <main className="overflow-x-hidden">
                 <HeroSection />
                 <div id="how-it-works">
                     <AISection />

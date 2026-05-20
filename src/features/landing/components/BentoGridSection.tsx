@@ -75,9 +75,9 @@ export default function BentoGridSection() {
     return (
         <section className="bg-gradient-to-b from-[#0E0E10] to-[#050505] py-24 sm:py-32">
             <div className="mx-auto mb-16 max-w-7xl px-6 lg:px-8">
-                <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
                     <div>
-                        <h2 className="text-pretty text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
+                        <h2 className="text-pretty text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
                             Made for modern
                             <br />
                             freelance businesses

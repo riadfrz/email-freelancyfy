@@ -73,7 +73,7 @@ const HeroSection = () => {
             ref={containerRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={() => setMousePosition({ x: null, y: null })}
-            className="relative overflow-hidden pb-32 pt-16 lg:pt-24"
+            className="relative overflow-hidden pb-16 pt-16 md:pb-32 lg:pt-24"
             backgroundElement={
                 <InteractiveStarfield mousePosition={mousePosition} containerRef={containerRef as React.RefObject<HTMLDivElement>} />
             }
@@ -92,12 +92,12 @@ const HeroSection = () => {
                                 <ChevronRight className="ml-1 h-3 w-3 text-landing-secondary" />
                             </div>
 
-                            <h1 className="mb-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-[80px] lg:leading-[1]">
+                            <h1 className="mb-8 text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-[80px] lg:leading-[1]">
                                 Freelance business <br />
                                 operating system
                             </h1>
 
-                            <p className="mb-12 max-w-2xl text-xl leading-relaxed text-landing-secondary">
+                            <p className="mb-12 max-w-2xl px-4 text-lg leading-relaxed text-landing-secondary sm:text-xl">
                                 Manage projects, clients, and finance in one unified workspace.{' '}
                                 <br className="hidden sm:block" />
                                 Stop stitching together fragmented tools and focus on shipping work.
@@ -109,9 +109,25 @@ const HeroSection = () => {
                         </div>
                     }
                 >
-                    <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-2xl shadow-black/50">
-                        {/* Browser Chrome */}
-                        <div className="flex h-10 shrink-0 items-center justify-between border-b border-slate-100 bg-slate-50 px-4">
+                    <div className="flex h-[500px] flex-col overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-2xl shadow-black/50 md:h-full md:rounded-lg md:border-0">
+                        {/* Mobile Status Bar (Hidden on Desktop) */}
+                        <div className="flex h-8 shrink-0 items-center justify-between bg-white px-4 md:hidden">
+                            <span className="text-[11px] font-semibold text-slate-900">9:41</span>
+                            <div className="flex items-center gap-1.5 opacity-80">
+                                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9V1M4.5 9V3M8 9V5M11.5 9V7" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 1L1 8C2.5 9.5 4.5 10 7 10C9.5 10 11.5 9.5 13 8L7 1Z" fill="#0f172a"/>
+                                </svg>
+                                <div className="h-2.5 w-5 rounded-[3px] border border-slate-900 bg-slate-900/10 p-[1px]">
+                                    <div className="h-full w-[80%] rounded-[1px] bg-slate-900" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Desktop Browser Chrome (Hidden on Mobile) */}
+                        <div className="hidden h-10 shrink-0 items-center justify-between border-b border-slate-100 bg-slate-50 px-4 md:flex">
                             <div className="flex gap-2">
                                 <div className="h-3 w-3 rounded-full bg-red-400/80" />
                                 <div className="h-3 w-3 rounded-full bg-yellow-400/80" />
@@ -171,8 +187,7 @@ const HeroSection = () => {
 
                             {/* 2. Main Content */}
                             <div className="flex flex-1 flex-col overflow-hidden bg-white">
-                                {/* Header */}
-                                <header className="flex items-center justify-between border-b border-slate-100 px-8 py-5">
+                                <header className="flex items-center justify-between border-b border-slate-100 px-4 py-4 sm:px-8 sm:py-5">
                                     <div className="space-y-1">
                                         <div className="flex items-center gap-2 text-xs text-slate-400">
                                             <span>Dashboard</span>
@@ -202,12 +217,18 @@ const HeroSection = () => {
                                             <Plus size={16} /> Request Project
                                         </button>
                                     </div>
+                                    <div className="flex items-center gap-4 md:hidden">
+                                        <Bell size={18} className="text-slate-400" />
+                                        <button className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white shadow-sm">
+                                            <Plus size={16} />
+                                        </button>
+                                    </div>
                                 </header>
 
                                 {/* Content & Right Sidebar Grid */}
                                 <div className="flex flex-1 overflow-hidden">
                                     {/* Center Column */}
-                                    <div className="flex-1 overflow-y-auto p-8">
+                                    <div className="flex-1 overflow-y-auto p-4 sm:p-8">
                                         <div className="mb-6 flex items-center justify-between">
                                             <h2 className="text-lg font-bold text-slate-900">
                                                 Active Projects
@@ -321,8 +342,28 @@ const HeroSection = () => {
                             </div>
                         </div>
 
-                        {/* Fade to black overlay */}
-                        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
+                        {/* Mobile Bottom Navigation */}
+                        <div className="flex items-center justify-around border-t border-slate-100 bg-white/90 px-4 py-3 backdrop-blur-md md:hidden z-30">
+                            <div className="flex flex-col items-center gap-1 text-slate-900">
+                                <LayoutGrid size={20} />
+                                <span className="text-[10px] font-medium">Home</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-1 text-slate-400">
+                                <Folder size={20} />
+                                <span className="text-[10px] font-medium">Projects</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-1 text-slate-400">
+                                <MessageSquare size={20} />
+                                <span className="text-[10px] font-medium">Messages</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-1 text-slate-400">
+                                <Users size={20} />
+                                <span className="text-[10px] font-medium">Clients</span>
+                            </div>
+                        </div>
+
+                        {/* Fade to black overlay for desktop ContainerScroll */}
+                        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 hidden md:block" />
                     </div>
                 </ContainerScroll>
             </div>

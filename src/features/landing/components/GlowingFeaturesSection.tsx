@@ -14,7 +14,7 @@ export default function GlowingFeaturesSection() {
                     <h2 className="text-base/7 font-semibold text-landing-primary">
                         Why Freelancyfy?
                     </h2>
-                    <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-balance sm:text-5xl">
+                    <p className="mt-2 text-pretty text-3xl font-semibold tracking-tight text-white sm:text-balance sm:text-4xl md:text-5xl">
                         Everything you need to scale your independent career
                     </p>
                     <p className="mt-6 text-lg/8 text-gray-300">
@@ -79,7 +79,7 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
                     inactiveZone={0.01}
                     borderWidth={3}
                 />
-                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
                     <div className="relative flex flex-1 flex-col justify-between gap-3">
                         <div className="w-fit rounded-lg border-[0.75px] border-border bg-muted p-2">
                             {icon}
